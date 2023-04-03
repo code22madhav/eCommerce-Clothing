@@ -1,4 +1,7 @@
 import Directory from "./component/directory/directory-component";
+import Navbar from "./component/Navbar-component/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
 const App= ()=> {
   const categories=[
     {
@@ -28,7 +31,17 @@ const App= ()=> {
     },
   ]
   return (
-    <Directory categories={categories}/>
+    <>
+    <Navbar/>
+    <Router>
+      <div className="container" style={{'padding-top': '5rem'}}>
+        <Routes>
+        <Route exact path="/" element={<Directory categories={categories}/>}/>
+        </Routes>
+      </div>
+    </Router>
+    </>
+    
   );
 }
 
