@@ -2,6 +2,7 @@ import Directory from "./component/directory/directory-component";
 import Navbar from "./component/Navbar-component/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
+import SignIn from "./component/SignIn";
 const App= ()=> {
   const categories=[
     {
@@ -34,9 +35,10 @@ const App= ()=> {
     <>
     <Navbar/>
     <Router>
-      <div className="container" style={{'padding-top': '5rem'}}>
+      <div className="container" style={{'paddingTop': '5rem'}}>
         <Routes>
         <Route exact path="/" element={<Directory categories={categories}/>}/>
+        <Route exact path="/signIn" element={<SignIn/>}/>
         </Routes>
       </div>
     </Router>
