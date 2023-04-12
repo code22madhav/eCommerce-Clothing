@@ -38,7 +38,7 @@ const App= ()=> {
       <div className="container" style={{'paddingTop': '5rem'}}>
         <Routes>
         <Route exact path="/" element={<Directory categories={categories}/>}/>
-        <Route exact path="/signIn" element={<SignIn/>}/>
+        <Route exact path="/signin" element={<SignIn/>}/>
         </Routes>
       </div>
     </Router>
