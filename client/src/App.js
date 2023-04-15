@@ -2,7 +2,7 @@ import Directory from "./component/directory/directory-component";
 import Navbar from "./component/Navbar-component/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
-import SignIn from "./component/SignIn";
+import Authentication from "./component/Authentication/Authentication.component";
 const App= ()=> {
   const categories=[
     {
@@ -38,7 +38,7 @@ const App= ()=> {
       <div className="container" style={{'paddingTop': '5rem'}}>
         <Routes>
         <Route exact path="/" element={<Directory categories={categories}/>}/>
-        <Route exact path="/signin" element={<SignIn/>}/>
+        <Route exact path="/auth" element={<Authentication/>}/>
         </Routes>
       </div>
     </Router>
