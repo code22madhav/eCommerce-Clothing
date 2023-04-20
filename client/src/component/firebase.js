@@ -6,6 +6,8 @@ import {
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
 } from 'firebase/auth'
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
@@ -68,3 +70,14 @@ export const signInAuthUserWithEmailAndPassword= async(email, password)=>{
 
   return await signInWithEmailAndPassword(auth, email, password);
 }
+
+export const SignOutUser= async()=>{
+  await signOut(auth);
+}
+
+
+export const onAuthStateChangedListener=(callback)=> onAuthStateChanged(auth, callback);
+//onAutStateChanged is observer pattern stream and we need to suscribe(use) a listener to check each activity
+//of the stream every listener has the parameters one is next another is error and the last is complete which
+//is called when the stream is completed In our case callback is the next parameter. For more details watch 
+// video number 111 and 112

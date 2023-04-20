@@ -1,5 +1,5 @@
 import React from 'react'
-import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword} from '../firebase'
+import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword} from '../firebase'
 import { useState } from 'react';
 import FormInput from '../Form-Input/FormInput';
 import Button from '../Button/Button.component';
@@ -19,7 +19,7 @@ const SignIn = () => {
     event.preventDefault();
 
     try {
-        const response = await signInAuthUserWithEmailAndPassword(email,password);
+        await signInAuthUserWithEmailAndPassword(email,password);
     } catch (error) {
         switch (error.code) {
             case 'auth/wrong-password':
@@ -40,8 +40,7 @@ const SignIn = () => {
 
 
     const logGoogleUser= async()=>{
-        const { user }= await signInWithGooglePopup();
-        const userDocRef= await createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
     }
 
   return (

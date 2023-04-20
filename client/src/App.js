@@ -33,8 +33,8 @@ const App= ()=> {
   ]
   return (
     <>
-    <Navbar/>
     <Router>
+    <Navbar/>
       <div className="container" style={{'paddingTop': '5rem'}}>
         <Routes>
         <Route exact path="/" element={<Directory categories={categories}/>}/>

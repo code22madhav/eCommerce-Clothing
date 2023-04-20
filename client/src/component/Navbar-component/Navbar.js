@@ -1,7 +1,11 @@
 import './Navbar-style.css'
-import React from 'react'
+import React, {useContext} from 'react'
+import { Link } from 'react-router-dom'
+import { UserContext } from '../../context/user.context'
+import { SignOutUser } from '../firebase'
 
 const Navbar = () => {
+  const {currentUser} = useContext(UserContext);
   return (
     <nav className="navbar">
         <div className="navbar-container container">
@@ -12,16 +16,16 @@ const Navbar = () => {
                 <span className="line line3"></span>
             </div>
             <ul className="menu-items">
-                <li><a href="/">Home</a></li>
+                <li><Link to='/'>Home</Link></li>
                 <li><a href="/">About</a></li>
                 <li><a href="/">Category</a></li>
                 <li><a href="/">Menu</a></li>
-                <li><a href="/">Testimonial</a></li>
                 <li><a href="/">Contact</a></li>
+                { currentUser ? (<li><Link onClick={SignOutUser}>Sign Out</Link></li>): (<li><Link to='/auth'>Sign In</Link></li>)}
             </ul>
             <h1 className="logo">ShopZen-G</h1>
         </div>
-    </nav>
+    </nav> 
   )
 }
 
