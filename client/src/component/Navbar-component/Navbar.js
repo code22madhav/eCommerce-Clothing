@@ -17,9 +17,9 @@ const Navbar = () => {
             </div>
             <ul className="menu-items">
                 <li><Link to='/'>Home</Link></li>
+                <li><Link to='/shop'>Shop</Link></li>
                 <li><a href="/">About</a></li>
                 <li><a href="/">Category</a></li>
-                <li><a href="/">Menu</a></li>
                 <li><a href="/">Contact</a></li>
                 { currentUser ? (<li><Link onClick={SignOutUser}>Sign Out</Link></li>): (<li><Link to='/auth'>Sign In</Link></li>)}
             </ul>

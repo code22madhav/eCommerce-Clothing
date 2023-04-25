@@ -3,6 +3,7 @@ import Navbar from "./component/Navbar-component/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import Authentication from "./component/Authentication/Authentication.component";
+import Shop from "./component/Shop-component/ShopPage";
 const App= ()=> {
   const categories=[
     {
@@ -39,6 +40,7 @@ const App= ()=> {
         <Routes>
         <Route exact path="/" element={<Directory categories={categories}/>}/>
         <Route exact path="/auth" element={<Authentication/>}/>
+        <Route exact path="/shop" element={<Shop/>}/>
         </Routes>
       </div>
     </Router>
