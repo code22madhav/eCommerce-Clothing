@@ -33,7 +33,7 @@
 
 .navbar-container{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: 64px;
     align-items: center;
 }
@@ -41,11 +41,19 @@
 .menu-items{
     order: 2;
     display: flex;
+    margin-left: auto;
 }
+
 .logo{
     order: 1;
     font-size: 2.3rem;
     font-family: 'Delicious Handrawn', cursive;
+}
+
+.cartIcon{
+    order: 3;
+    margin-right: 3px;
+    margin-top: -2px;
 }
 
 .menu-items li{
